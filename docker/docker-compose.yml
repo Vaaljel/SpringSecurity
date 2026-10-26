@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: auth_service
+    environment:
+      POSTGRES_DB: postgre
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 123
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
