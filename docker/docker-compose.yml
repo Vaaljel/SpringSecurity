@@ -3,7 +3,7 @@ services:
     image: postgres:17
     container_name: auth_service
     environment:
-      POSTGRES_DB: postgre
+      POSTGRES_DB: auth_db
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: 123
     ports:

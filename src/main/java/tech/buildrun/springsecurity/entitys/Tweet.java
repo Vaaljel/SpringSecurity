@@ -18,6 +18,10 @@ public class Tweet {
     private Long tweetId;
 
 
+    @ManyToOne
+    @JoinColumn(
+            name = "user_id"
+    )
     private User user;
 
     private String content;
