@@ -3,6 +3,8 @@ package tech.buildrun.springsecurity.entitys;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import tech.buildrun.springsecurity.controller.dto.LoginRequest;
 
 import java.util.Set;
 import java.util.UUID;
@@ -31,4 +33,8 @@ public class User {
 
     private Set<Role> roles;
 
+    public boolean isLoginCorrect(LoginRequest loginRequest, PasswordEncoder passwordEncoder) {
+
+        return passwordEncoder.matches(loginRequest.password(), this.password);
+    }
 }
